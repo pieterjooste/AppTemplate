@@ -24,6 +24,7 @@
 		C59A1D8C2BEB7A03009C502A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C59A1D8B2BEB7A03009C502A /* GoogleService-Info.plist */; };
 		C59A1D8F2BEB7A86009C502A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = C59A1D8E2BEB7A86009C502A /* GoogleSignIn */; };
 		C59A1D912BEB7A86009C502A /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C59A1D902BEB7A86009C502A /* GoogleSignInSwift */; };
+		C59A1D952BEE18C5009C502A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A1D942BEE18C5009C502A /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		C59A1D892BEA8582009C502A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C59A1D8B2BEB7A03009C502A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C59A1D922BEB7AEB009C502A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C59A1D942BEE18C5009C502A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				C59A1D922BEB7AEB009C502A /* Info.plist */,
 				C59A1D8B2BEB7A03009C502A /* GoogleService-Info.plist */,
 				C59375D02BEA427700CA4AB5 /* AppTemplateApp.swift */,
+				C59A1D932BEE182E009C502A /* Utilities */,
 				C59A1D7E2BEA5742009C502A /* Authentication */,
 				C59375D22BEA427700CA4AB5 /* ContentView.swift */,
 				C59375D42BEA427900CA4AB5 /* Assets.xcassets */,
@@ -107,6 +110,14 @@
 				C59A1D832BEA639C009C502A /* AuthenticationManager.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		C59A1D932BEE182E009C502A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C59A1D942BEE18C5009C502A /* Utilities.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,7 @@
 				C59A1D882BEA7FE2009C502A /* RootView.swift in Sources */,
 				C59A1D802BEA576B009C502A /* AuthenticationView.swift in Sources */,
 				C59A1D842BEA639C009C502A /* AuthenticationManager.swift in Sources */,
+				C59A1D952BEE18C5009C502A /* Utilities.swift in Sources */,
 				C59A1D822BEA59B8009C502A /* SignInEmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
