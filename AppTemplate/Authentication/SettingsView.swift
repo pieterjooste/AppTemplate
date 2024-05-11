@@ -11,6 +11,14 @@ import SwiftUI
 @MainActor
 final class SettingsViewModel: ObservableObject {
     
+    @Published var authProviders: [AuthProviderOption] = []
+    
+    func loadAuthProviders() {
+        if let providers = try? AuthenticationManager.shared.getProviders() {
+            authProviders = providers
+        }
+    }
+    
     func signOut() throws {
         try AuthenticationManager.shared.signOut()
     }
@@ -25,10 +33,10 @@ final class SettingsViewModel: ObservableObject {
         try await AuthenticationManager.shared.resetPassword(email: email)
     }
     
-    func updateEmail() async throws {
-        let email = "hello123@gmail.com"
-        try await AuthenticationManager.shared.updateEmail(email: email)
-    }
+//    func updateEmail() async throws {
+//        let email = "hello123@gmail.com"
+//        try await AuthenticationManager.shared.updateEmail(email: email)
+//    }
     
     func updatePassword() async throws {
         let password = "Hello123!"
@@ -54,8 +62,14 @@ struct SettingsView: View {
                 }
             }
             
-            emailSection
+            if viewModel.authProviders.contains(.email) {
+                emailSection
+            }
+           
             
+        }
+        .onAppear {
+            viewModel.loadAuthProviders()
         }
         .navigationTitle("Settings")
     }
@@ -95,16 +109,16 @@ extension SettingsView {
                 }
             }
             
-            Button("Update email") {
-                Task {
-                    do {
-                        try await viewModel.updateEmail()
-                        print("EMAIL UPDATED!")
-                    } catch {
-                        print(error)
-                    }
-                }
-            }
+//            Button("Update email") {
+//                Task {
+//                    do {
+//                        try await viewModel.updateEmail()
+//                        print("EMAIL UPDATED!")
+//                    } catch {
+//                        print(error)
+//                    }
+//                }
+//            }
         } header: {
             Text("E-mail functions")
         }

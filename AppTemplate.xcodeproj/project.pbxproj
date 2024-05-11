@@ -25,6 +25,7 @@
 		C59A1D8F2BEB7A86009C502A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = C59A1D8E2BEB7A86009C502A /* GoogleSignIn */; };
 		C59A1D912BEB7A86009C502A /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C59A1D902BEB7A86009C502A /* GoogleSignInSwift */; };
 		C59A1D952BEE18C5009C502A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A1D942BEE18C5009C502A /* Utilities.swift */; };
+		C59A1D972BEEA4BC009C502A /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A1D962BEEA4BC009C502A /* SignInGoogleHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		C59A1D8B2BEB7A03009C502A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C59A1D922BEB7AEB009C502A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C59A1D942BEE18C5009C502A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		C59A1D962BEEA4BC009C502A /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
+		C59A1D982BEF8C06009C502A /* AppTemplate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppTemplate.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +83,13 @@
 		C59375CF2BEA427700CA4AB5 /* AppTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				C59A1D982BEF8C06009C502A /* AppTemplate.entitlements */,
 				C59A1D922BEB7AEB009C502A /* Info.plist */,
-				C59A1D8B2BEB7A03009C502A /* GoogleService-Info.plist */,
 				C59375D02BEA427700CA4AB5 /* AppTemplateApp.swift */,
+				C59375D22BEA427700CA4AB5 /* ContentView.swift */,
 				C59A1D932BEE182E009C502A /* Utilities */,
 				C59A1D7E2BEA5742009C502A /* Authentication */,
-				C59375D22BEA427700CA4AB5 /* ContentView.swift */,
+				C59A1D8B2BEB7A03009C502A /* GoogleService-Info.plist */,
 				C59375D42BEA427900CA4AB5 /* Assets.xcassets */,
 				C59375D62BEA427900CA4AB5 /* Preview Content */,
 			);
@@ -103,11 +107,12 @@
 		C59A1D7E2BEA5742009C502A /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				C59A1D7F2BEA576B009C502A /* AuthenticationView.swift */,
 				C59A1D872BEA7FE2009C502A /* RootView.swift */,
+				C59A1D7F2BEA576B009C502A /* AuthenticationView.swift */,
 				C59A1D812BEA59B8009C502A /* SignInEmailView.swift */,
 				C59A1D892BEA8582009C502A /* SettingsView.swift */,
 				C59A1D832BEA639C009C502A /* AuthenticationManager.swift */,
+				C59A1D962BEEA4BC009C502A /* SignInGoogleHelper.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 				C59375D32BEA427700CA4AB5 /* ContentView.swift in Sources */,
 				C59375D12BEA427700CA4AB5 /* AppTemplateApp.swift in Sources */,
 				C59A1D882BEA7FE2009C502A /* RootView.swift in Sources */,
+				C59A1D972BEEA4BC009C502A /* SignInGoogleHelper.swift in Sources */,
 				C59A1D802BEA576B009C502A /* AuthenticationView.swift in Sources */,
 				C59A1D842BEA639C009C502A /* AuthenticationManager.swift in Sources */,
 				C59A1D952BEE18C5009C502A /* Utilities.swift in Sources */,
@@ -342,6 +348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AppTemplate/AppTemplate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppTemplate/Preview Content\"";
@@ -372,6 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AppTemplate/AppTemplate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppTemplate/Preview Content\"";

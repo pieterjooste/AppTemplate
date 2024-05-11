@@ -20,6 +20,12 @@ struct AuthDataResultModel {
     }
 }
 
+enum AuthProviderOption: String {
+    case email = "password"
+    case google = "google.com"
+    case apple = "apple.com"
+}
+
 final class AuthenticationManager {
     
     static let shared = AuthenticationManager()
@@ -30,6 +36,23 @@ final class AuthenticationManager {
             throw URLError(.resourceUnavailable)
         }
         return AuthDataResultModel(user: user)
+    }
+    
+    func getProviders() throws -> [AuthProviderOption ]{
+        guard let providerData = Auth.auth().currentUser?.providerData else {
+            throw URLError(.badServerResponse)
+        }
+        
+        var providers: [AuthProviderOption] = []
+        for provider in providerData {
+            if let option = AuthProviderOption(rawValue: provider.providerID) {
+                providers.append(option)
+            } else {
+                assertionFailure("Provider option not found: \(provider.providerID)")
+            }
+        }
+        
+        return providers
     }
     
     func signOut() throws {
@@ -64,15 +87,15 @@ extension AuthenticationManager {
         try await user.updatePassword(to: password)
     }
     
-    func updateEmail(email: String) async throws {
-        guard let user = Auth.auth().currentUser else {
-            throw URLError(.userAuthenticationRequired)
-        }
-        
+//    func updateEmail(email: String) async throws {
+//        guard let user = Auth.auth().currentUser else {
+//            throw URLError(.userAuthenticationRequired)
+//        }
+//        
 //        try await user.updateEmail(to: email)
-        
-        try await user.sendEmailVerification(beforeUpdatingEmail: email)
-    }
+//        
+//        try await user.sendEmailVerification(beforeUpdatingEmail: email)
+//    }
 }
 
 
@@ -83,6 +106,12 @@ extension AuthenticationManager {
     @discardableResult
     func signInWithGoogle(tokens: GoogleSignInResultModel) async throws -> AuthDataResultModel {
         let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken, accessToken: tokens.accessToken)
+        return try await signIn(credential: credential)
+    }
+    
+    @discardableResult
+    func signInWithApple(tokens: SignInWithAppleResult) async throws -> AuthDataResultModel {
+        let credential = OAuthProvider.credential(withProviderID: AuthProviderOption.apple.rawValue, idToken: tokens.token, rawNonce: tokens.nonce)
         return try await signIn(credential: credential)
     }
     
