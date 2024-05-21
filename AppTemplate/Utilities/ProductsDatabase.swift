@@ -38,7 +38,7 @@ struct Product: Identifiable, Codable, Equatable {
         case images
     }
     
-    static func ==(lhs: Product, rhs: Product) -> Bool {
+    static func == (lhs: Product, rhs: Product) -> Bool {
         return lhs.id == rhs.id
     }
     
