@@ -82,6 +82,13 @@ final class ProductsViewModel: ObservableObject {
 //            self.lastDocument = lastDocument
 //        }
 //    }
+    
+//    func getProductsCount() {
+//        Task {
+//            let count = try await ProductsManager.shared.getAllProductsCount()
+//            print("All PRODUCT COUNT: \(count)")
+//        }
+//    }
 }
 
 struct ProductsView: View {
@@ -128,6 +135,7 @@ struct ProductsView: View {
             }
         })
         .onAppear {
+//            viewModel.getProductsCount()
             viewModel.getProducts()
         }
     }
