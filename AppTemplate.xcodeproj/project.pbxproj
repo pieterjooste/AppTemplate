@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C588C1852BFDF0C3007DC4A8 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C588C1842BFDF0C3007DC4A8 /* TabBarView.swift */; };
+		C588C1882BFE24AD007DC4A8 /* FavouriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C588C1872BFE24AD007DC4A8 /* FavouriteView.swift */; };
+		C58BA4752BFFE25400D3A819 /* ProductCellViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58BA4742BFFE25400D3A819 /* ProductCellViewBuilder.swift */; };
 		C58BEF342BF0BFE100A7B65C /* SignInAppleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58BEF332BF0BFE100A7B65C /* SignInAppleHelper.swift */; };
 		C59180A32BF3408300032824 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59180A22BF3408300032824 /* SettingsViewModel.swift */; };
 		C59180A62BF3417200032824 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59180A52BF3417200032824 /* AuthenticationViewModel.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C588C1842BFDF0C3007DC4A8 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		C588C1872BFE24AD007DC4A8 /* FavouriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteView.swift; sourceTree = "<group>"; };
+		C58BA4742BFFE25400D3A819 /* ProductCellViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellViewBuilder.swift; sourceTree = "<group>"; };
 		C58BEF332BF0BFE100A7B65C /* SignInAppleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleHelper.swift; sourceTree = "<group>"; };
 		C59180A22BF3408300032824 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		C59180A52BF3417200032824 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
@@ -84,12 +90,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C588C1832BFDF056007DC4A8 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C588C1842BFDF0C3007DC4A8 /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		C588C1862BFE2466007DC4A8 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				C588C1872BFE24AD007DC4A8 /* FavouriteView.swift */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
 		C59180A02BF33F9700032824 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				C59A1D872BEA7FE2009C502A /* RootView.swift */,
-				C59180B02BF72F7200032824 /* Products */,
 				C59180A42BF3410700032824 /* Authentication */,
+				C588C1832BFDF056007DC4A8 /* TabBar */,
+				C59180B02BF72F7200032824 /* Products */,
+				C588C1862BFE2466007DC4A8 /* Favourites */,
 				C59180AA2BF3426A00032824 /* Profile */,
 				C59180A12BF3405200032824 /* Settings */,
 			);
@@ -144,8 +168,8 @@
 		C59180B02BF72F7200032824 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C59180B72BF7561600032824 /* Subviews */,
 				C59180B12BF72F9A00032824 /* ProductsView.swift */,
+				C59180B72BF7561600032824 /* Subviews */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -154,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				C59180B82BF7563E00032824 /* ProductCellView.swift */,
+				C58BA4742BFFE25400D3A819 /* ProductCellViewBuilder.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -321,6 +346,9 @@
 				C59180B22BF72F9A00032824 /* ProductsView.swift in Sources */,
 				C58BEF342BF0BFE100A7B65C /* SignInAppleHelper.swift in Sources */,
 				C59180AC2BF342B500032824 /* ProfileView.swift in Sources */,
+				C58BA4752BFFE25400D3A819 /* ProductCellViewBuilder.swift in Sources */,
+				C588C1852BFDF0C3007DC4A8 /* TabBarView.swift in Sources */,
+				C588C1882BFE24AD007DC4A8 /* FavouriteView.swift in Sources */,
 				C59A1D822BEA59B8009C502A /* SignInEmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

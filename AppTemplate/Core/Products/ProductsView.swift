@@ -73,6 +73,13 @@ final class ProductsViewModel: ObservableObject {
         }
     }
     
+    func addUserFavouriteProduct(productId: Int) {
+        Task {
+            let authDataResult = try AuthenticationManager.shared.getAuthenticatedUser()
+            try? await UserManager.shared.addUserFavouriteProduct(userId: authDataResult.uid, productId: productId)
+        }
+    }
+    
 //    func getProductsByRating() {
 //        Task {
 ////            let newProducts = try await ProductsManager.shared.getProductsByRating(count: 3, lastRating: self.products.last?.rating)
@@ -99,6 +106,11 @@ struct ProductsView: View {
         List {
             ForEach(viewModel.products) { product in
                 ProductCellView(product: product)
+                    .contextMenu {
+                        Button("Add to Favourites") {
+                            viewModel.addUserFavouriteProduct(productId: product.id)
+                        }
+                    }
                 
                 if product == viewModel.products.last {
                     ProgressView()
