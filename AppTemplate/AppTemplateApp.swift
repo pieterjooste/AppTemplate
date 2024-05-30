@@ -16,6 +16,7 @@ struct BackEndFirebaseApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+//            CrashView()
         }
     }
 }

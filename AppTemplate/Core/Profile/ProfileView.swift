@@ -67,7 +67,7 @@ struct ProfileView: View {
                 }
                 
                 PhotosPicker(selection: $selectedItem, matching: .images, photoLibrary: .shared()) {
-                    Text("Select a Photo")
+                    Text("Select an Image")
                 }
                 
                 if let urlString = viewModel.user?.profileImagePathUrl, let url = URL(string: urlString) {
@@ -93,11 +93,16 @@ struct ProfileView: View {
         .task {
             try? await viewModel.loadCurrentUser()
         }
-        .onChange(of: selectedItem, perform: { newValue in
-            if let newValue {
-                viewModel.saveProfileImage(item: newValue)
+//        .onChange(of: selectedItem, perform: { newValue in
+//            if let newValue {
+//                viewModel.saveProfileImage(item: newValue)
+//            }
+//        })
+        .onChange(of: selectedItem) {
+            if let selectedItem {
+                viewModel.saveProfileImage(item: selectedItem)
             }
-        })
+        }
         .navigationTitle("Profile")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
